@@ -25,4 +25,3 @@ class Solution:
             front += 1
 
         return max(maxi, len(hashmap.keys()))
-    

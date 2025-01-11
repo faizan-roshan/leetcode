@@ -2,11 +2,12 @@
 
 from typing import List
 
+
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        
+
         until_here = 0
-        maximum = -1 * float('inf')
+        maximum = -1 * float("inf")
         for idx, num in enumerate(nums):
 
             until_here = max(until_here + num, num)

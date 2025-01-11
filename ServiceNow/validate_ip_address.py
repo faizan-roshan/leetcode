@@ -1,5 +1,7 @@
 # Leetcode: https://leetcode.com/problems/validate-ip-address/
 
+from typing import List
+
 
 class Solution:
     def validIPAddress(self, queryIP: str) -> str:
@@ -7,16 +9,16 @@ class Solution:
         ip = queryIP.split(".")
         if len(ip) == 4:
 
-            return self.checkValidIPv4(ip)
+            return self.check_valid_ipv4(ip)
 
         ip = queryIP.split(":")
         if len(ip) == 8:
 
-            return self.checkValidIPv6(ip)
+            return self.check_valid_ipv6(ip)
 
         return "Neither"
 
-    def checkValidIPv4(self, ip: List[str]) -> None:
+    def check_valid_ipv4(self, ip: List[str]) -> None:
 
         for sub_ip in ip:
 
@@ -28,7 +30,7 @@ class Solution:
                 return "Neither"
         return "IPv4"
 
-    def checkValidIPv6(self, ip: List[str]) -> None:
+    def check_valid_ipv6(self, ip: List[str]) -> None:
 
         valid_char = set(["a", "b", "c", "d", "e", "f", "A", "B", "C", "D", "E", "F"])
         for sub_ip in ip:

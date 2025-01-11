@@ -2,6 +2,7 @@
 
 from typing import List
 
+
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
         result = []
@@ -17,5 +18,5 @@ class Solution:
         # Recursive case: generate permutations by swapping
         for i in range(idx, len(nums)):
             nums[i], nums[idx] = nums[idx], nums[i]  # Swap
-            self._backtrack(nums, idx + 1, result)   # Recurse
+            self._backtrack(nums, idx + 1, result)  # Recurse
             nums[i], nums[idx] = nums[idx], nums[i]  # Backtrack
